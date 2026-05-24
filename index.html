@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIGDA AI | The Future of Autonomous Business</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-deep: #020617;
+            --accent-blue: #3B82F6;
+            --accent-cyan: #22D3EE;
+        }
+
+        body{
+            background-color: var(--bg-deep);
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Floating UI Elements */
+        .float-element {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.15;
+            animation: float 15s infinite alternate ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 100px) scale(1.2); }
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #fff 40%, rgba(255,255,255,0.4) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .accent-gradient-text {
+            background: linear-gradient(90deg, #3B82F6, #22D3EE, #818CF8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3B82F6 0%, #22D3EE 100%);
+            transition: 0.3s ease;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+            transform: translateY(-2px);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 40s linear infinite;
+        }
+
+        .step-connector {
+            position: relative;
+        }
+        @media (min-width: 768px) {
+            .step-connector::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                width: 100%;
+                height: 2px;
+                background: linear-gradient(90deg, #3B82F6, transparent);
+                z-index: -1;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="D:\OneDrive\Desktop\New folder.css">
+</head>
+<body class="antialiased">
+
+    <!-- Floating UI Background Decor -->
+    <div class="float-element w-[400px] h-[400px] bg-blue-600 top-0 left-[-100px]"></div>
+    <div class="float-element w-[500px] h-[500px] bg-purple-600 bottom-0 right-[-100px]" style="animation-delay: -5s;"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-[100] bg-slate-950/60 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+                    <i data-lucide="zap" class="text-white w-5 h-5 fill-current"></i>
+                </div>
+                <span class="text-2xl font-bold tracking-tighter">TRIGDA <span class="text-blue-500">AI</span></span>
+            </div>
+            <div class="hidden lg:flex items-center gap-10 text-sm font-semibold text-gray-400">
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#how-it-works" class="hover:text-white transition-colors">Process</a>
+                <a href="#demo" class="hover:text-white transition-colors">Demo</a>
+                <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+            </div>
+            <button class="btn-primary px-7 py-3 rounded-full text-sm font-bold shadow-xl">Start Free</button>
+        </div>
+    </nav>
+
+
+
+
+
+    <!-- Hero Section -->
+    <section class="pt-48 pb-24 px-6 relative">
+        <div class="max-w-5xl mx-auto text-center">
+          
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-8 tracking-tighter text-gradient font-sora leading-tight">
+                Your Business on <br/> <span class="accent-gradient-text">Autopilot.</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+                The world’s first AI workforce that doesn't just chat—it closes deals, manages campaigns, and scales your revenue 24/7.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <button class="btn-primary px-12 py-5 rounded-2xl text-lg font-bold">Launch Your AI Agent</button>
+                <button class="px-10 py-5 rounded-2xl text-lg font-bold glass-card flex items-center justify-center gap-3">Book Strategy Call</button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Trusted By Section -->
+    <section class="py-16 border-y border-white/5 bg-slate-950/20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 mb-10 text-center">
+            <p class="text-[10px] font-black text-gray-600 uppercase tracking-[0.5em]">Global Industry Leaders Trust NexGen</p>
+        </div>
+        <div class="flex animate-marquee whitespace-nowrap gap-20 items-center opacity-40 grayscale">
+            <span class="text-3xl font-black font-sora tracking-tighter">B2B PREMIUM LEAD</span>
+            <span class="text-3xl font-black font-sora tracking-tighter">STAR IMPORTS</span>
+            <span class="text-3xl font-black font-sora tracking-tighter">8OZ COFFE</span>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl md:text-5xl font-black font-sora text-gradient mb-6">Built for High-Growth Teams</h2>
+                    <p class="text-gray-500 text-lg">Specialized AI solutions designed to replace complex manual processes with precision automation.</p>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 rounded-full glass-card flex items-center justify-center cursor-pointer hover:bg-white/5 transition"><i data-lucide="chevron-left"></i></div>
+                    <div class="w-12 h-12 rounded-full glass-card flex items-center justify-center cursor-pointer hover:bg-white/5 transition"><i data-lucide="chevron-right"></i></div>
+                </div>
+            </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+
+    <div class="glass-card w-full min-h-[380px] p-8 rounded-[40px] group flex flex-col justify-between">
+        <div>
+            <div class="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-all duration-500">
+                <i data-lucide="message-square" class="text-blue-500 w-8 h-8 group-hover:text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Email Marketing</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+               Powerful email campaigns that engage your audience, nurture leads, and turn subscribers into loyal customers with proven
+            </p>
+        </div>
+        <a href="#" class="text-blue-400 font-bold text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all mt-6">
+            Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+    </div>
+
+    <div class="glass-card w-full min-h-[380px] p-8 rounded-[40px] group flex flex-col justify-between">
+        <div>
+            <div class="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-all duration-500">
+                <i data-lucide="bot" class="text-blue-500 w-8 h-8 group-hover:text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">AI ChatBot</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+               AI chatbots that handle your business messages, automatically book appointments, confirm orders, and respond to customers 24/7 without missing a lead.
+            </p>
+        </div>
+        <a href="#" class="text-blue-400 font-bold text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all mt-6">
+            Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+    </div>
+
+    <div class="glass-card w-full min-h-[380px] p-8 rounded-[40px] group flex flex-col justify-between">
+        <div>
+            <div class="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-all duration-500">
+                <i data-lucide="bot" class="text-blue-500 w-8 h-8 group-hover:text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">AI Automation</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              AI automation that streamlines your business processes, reduces manual work, and automatically manages tasks to save time and increase productivity.
+            </p>
+        </div>
+        <a href="#" class="text-blue-400 font-bold text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all mt-6">
+            Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+    </div>
+
+</div>
+        
+
+   
+
+
+
+
+       
+
+
+    
+
+</div>
+            
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-32 px-6 bg-slate-950/40 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24">
+                <h2 class="text-4xl md:text-6xl font-black font-sora text-gradient">The 3-Step Integration</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-16 relative">
+                <div class="text-center group">
+                    <div class="w-24 h-24 rounded-full glass-card mx-auto flex items-center justify-center mb-8 relative z-10 group-hover:ring-4 ring-blue-500/20 transition-all">
+                        <span class="text-3xl font-black text-blue-500">01</span>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Connect Ecosystem</h4>
+                    <p class="text-gray-500 text-sm">One-click integration with your website, CRM, and communication tools (Slack, Discord, WhatsApp).</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-24 h-24 rounded-full glass-card mx-auto flex items-center justify-center mb-8 relative z-10 group-hover:ring-4 ring-cyan-500/20 transition-all">
+                        <span class="text-3xl font-black text-cyan-500">02</span>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Configure Logic</h4>
+                    <p class="text-gray-500 text-sm">Define your brand voice, upload knowledge bases, and set your automated conversion goals.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-24 h-24 rounded-full glass-card mx-auto flex items-center justify-center mb-8 relative z-10 group-hover:ring-4 ring-indigo-500/20 transition-all">
+                        <span class="text-3xl font-black text-indigo-500">03</span>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Launch & Scale</h4>
+                    <p class="text-gray-500 text-sm">Deploy your agents. Watch as they handle thousands of interactions and generate revenue in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Demo Showcase -->
+    <section id="demo" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-black font-sora text-gradient mb-6">Seeing is Believing</h2>
+                <div class="flex justify-center gap-6 text-xs font-black tracking-widest uppercase text-gray-500">
+                    <span class="text-blue-500 border-b-2 border-blue-500 pb-2 cursor-pointer">Chat Interface</span>
+                    <span class="hover:text-white transition cursor-pointer">Campaign Builder</span>
+                    <span class="hover:text-white transition cursor-pointer">Analytics Dashboard</span>
+                </div>
+            </div>
+
+            <!-- Demo UI Mockup -->
+            <div class="glass-card rounded-[40px] p-4 md:p-10 border-white/10 shadow-3xl">
+                <div class="grid lg:grid-cols-12 gap-10">
+                    <!-- Left: Chat UI Mockup -->
+                    <div class="lg:col-span-4 space-y-4">
+                        <div class="glass-card p-6 rounded-3xl bg-white/5 border-white/5">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center font-bold">A</div>
+                                <div>
+                                    <div class="text-xs font-bold">Agent Alpha</div>
+                                    <div class="text-[10px] text-green-400">Online & Processing</div>
+                                </div>
+                            </div>
+                            <div class="space-y-4 mb-6">
+                                <div class="bg-gray-800/50 p-3 rounded-2xl rounded-tl-none text-[11px] text-gray-300">"Hello! I noticed you were looking at Enterprise pricing. Would you like a custom breakdown of ROI?"</div>
+                                <div class="bg-blue-600 p-3 rounded-2xl rounded-tr-none text-[11px] text-white ml-8">"Yes, that would be great."</div>
+                                <div class="bg-gray-800/50 p-3 rounded-2xl rounded-tl-none text-[11px] text-gray-300">"Generating PDF now... I've also scheduled a call with our lead architect for tomorrow at 2 PM."</div>
+                            </div>
+                            <div class="relative">
+                                <input type="text" placeholder="Type a command..." class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-xs">
+                                <i data-lucide="send" class="w-4 h-4 absolute right-4 top-3 text-gray-500"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Dashboard Metrics -->
+                    <div class="lg:col-span-8 space-y-6">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="glass-card p-6 rounded-3xl">
+                                <div class="text-[10px] font-black text-gray-500 mb-2">CONVERSION RATE</div>
+                                <div class="text-3xl font-bold">24.8%</div>
+                                <div class="w-full bg-gray-800 h-1 rounded-full mt-4"><div class="bg-blue-500 h-full w-[70%]"></div></div>
+                            </div>
+                            <div class="glass-card p-6 rounded-3xl">
+                                <div class="text-[10px] font-black text-gray-500 mb-2">RESPONSE TIME</div>
+                                <div class="text-3xl font-bold">0.8s</div>
+                                <div class="w-full bg-gray-800 h-1 rounded-full mt-4"><div class="bg-cyan-400 h-full w-[95%]"></div></div>
+                            </div>
+                        </div>
+                        <div class="glass-card p-8 rounded-3xl h-64 relative overflow-hidden">
+                             <h5 class="text-xs font-bold text-gray-400 mb-8 uppercase tracking-widest">Automation Workflow</h5>
+                             <div class="flex items-center justify-between relative px-4">
+                                <div class="w-12 h-12 rounded-xl bg-blue-500 flex items-center justify-center"><i data-lucide="globe" class="w-6 h-6"></i></div>
+                                <div class="h-[2px] flex-1 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
+                                <div class="w-12 h-12 rounded-xl bg-cyan-500 flex items-center justify-center"><i data-lucide="brain" class="w-6 h-6"></i></div>
+                                <div class="h-[2px] flex-1 bg-gradient-to-r from-cyan-500 to-indigo-500"></div>
+                                <div class="w-12 h-12 rounded-xl bg-indigo-500 flex items-center justify-center"><i data-lucide="dollar-sign" class="w-6 h-6"></i></div>
+                             </div>
+                             <div class="absolute bottom-6 left-8 right-8 flex justify-between text-[10px] font-bold text-gray-600">
+                                <span>VISITOR ARRIVAL</span>
+                                <span>AI QUALIFICATION</span>
+                                <span>REVENUE CAPTURE</span>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-black font-sora text-gradient mb-6">Everything You Need to Scale</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card p-8 rounded-3xl">
+                    <i data-lucide="headset" class="text-blue-500 w-8 h-8 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-3">24/7 AI Support</h4>
+                    <p class="text-gray-500 text-sm">Human-like responses to customer queries in 40+ languages with zero downtime.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl">
+                    <i data-lucide="shield-check" class="text-cyan-500 w-8 h-8 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-3">Smart Lead Qualification</h4>
+                    <p class="text-gray-500 text-sm">Our AI scores every lead based on behavior, intent, and company size automatically.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl">
+                    <i data-lucide="repeat" class="text-indigo-500 w-8 h-8 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-3">Automated Sequences</h4>
+                    <p class="text-gray-500 text-sm">Smart email and SMS follow-ups that adapt based on recipient interactions.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl">
+                    <i data-lucide="bar-chart-3" class="text-purple-500 w-8 h-8 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-3">Advanced Analytics</h4>
+                    <p class="text-gray-500 text-sm">Real-time visualization of ROI, sentiment analysis, and conversion bottlenecks.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl">
+                    <i data-lucide="link" class="text-blue-400 w-8 h-8 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-3">Tool Integrations</h4>
+                    <p class="text-gray-500 text-sm">Seamlessly sync with Salesforce, HubSpot, Shopify, and 2,000+ other apps.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl">
+                    <i data-lucide="lightbulb" class="text-yellow-500 w-8 h-8 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-3">Conversation Insights</h4>
+                    <p class="text-gray-500 text-sm">AI-generated summaries of every chat to help you refine your product and marketing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-32 px-6 bg-slate-950/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="glass-card p-10 rounded-3xl relative">
+                    <i data-lucide="quote" class="absolute top-8 right-8 text-blue-500/20 w-12 h-12"></i>
+                    <p class="text-gray-300 italic mb-8">"NexGen's lead gen automation replaced our entire BDR team of 5. Our pipeline has never been healthier, and the ROI was instant."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-600"></div>
+                        <div>
+                            <div class="font-bold">David Kessler</div>
+                            <div class="text-[10px] text-gray-500 font-black uppercase tracking-widest">Growth Lead, TechStream</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-10 rounded-3xl relative">
+                    <i data-lucide="quote" class="absolute top-8 right-8 text-cyan-500/20 w-12 h-12"></i>
+                    <p class="text-gray-300 italic mb-8">"We went from a 4-hour response time to 1.2 seconds. Customer satisfaction scores jumped from 78% to 99% in 30 days."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-cyan-600"></div>
+                        <div>
+                            <div class="font-bold">Jessica Lam</div>
+                            <div class="text-[10px] text-gray-500 font-black uppercase tracking-widest">COO, GlobalRetail</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-10 rounded-3xl relative">
+                    <i data-lucide="quote" class="absolute top-8 right-8 text-indigo-500/20 w-12 h-12"></i>
+                    <p class="text-gray-300 italic mb-8">"The private LLM feature is a game-changer for security. We finally have enterprise-grade AI we can actually trust."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-indigo-600"></div>
+                        <div>
+                            <div class="font-bold">Thomas Wright</div>
+                            <div class="text-[10px] text-gray-500 font-black uppercase tracking-widest">CTO, SecureData Inc</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24">
+                <h2 class="text-5xl md:text-7xl font-black font-sora text-gradient mb-8 leading-tight">Investment Options</h2>
+                <p class="text-gray-500 font-bold uppercase tracking-[0.4em] text-xs">Unlock Infinite Scale</p>
+            </div>
+           
+           
+           
+           You said
+    <div class="grid lg:grid-cols-3 gap-8 items-center">
+
+                <!-- Starter -->
+
+                <div class="glass-card p-12 rounded-[40px] border-white/5">
+<h4 class="font-bold text-gray-500 mb-5">STARTER</h4>
+      <div class="flex flex-col items-center justify-center w-full py-8">
+    
+    <div class="flex items-baseline gap-1">
+        <span class="text-5xl font-black text-white">$29</span>
+        <span class="text-gray-400 font-bold text-sm">/month</span>
+    </div>
+
+</div>
+                    
+
+                    <ul class="space-y-4 mb-12 text-sm text-gray-400">
+
+                       <li style="display: flex; align-items: center; margin-bottom: 10px; font-family: sans-serif;">
+
+                    <span style="color: #22c55e; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">&#10003;</span>
+
+                  <span>24/7 automated chat support
+
+                    </span>
+
+    </li>
+
+                   <li style="display: flex; align-items: center; margin-bottom: 10px; font-family: sans-serif;">
+
+                   <span style="color: #22c55e; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">&#10003;</span>
+
+                   <span>Instantly replies to customer messages
+
+                  </span>
+
+    </li>
+
+                        <li style="display: flex; align-items: center; margin-bottom: 10px; font-family: sans-serif;">
+
+                    <span style="color: #22c55e; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">&#10003;</span>
+
+                    <span> Books appointments automatically </span>
+
+    </li>
+
+                    </ul>
+
+                    <button class="w-full py-4 rounded-2xl border border-white/10 font-bold hover:bg-white/5 transition uppercase text-[10px] tracking-widest">Choose Starter</button>
+
+                </div>
+
+
+
+                <!-- Growth -->
+
+                <div class="glass-card p-12 rounded-[40px] border-blue-500/50 bg-gradient-to-b from-blue-900/20 to-transparent relative scale-110 z-10 shadow-2xl">
+
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue-500 px-6 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em]">MOST POPULAR</div>
+
+                    <h4 class="font-bold text-blue-400 mb-5">GROWTH</h4>
+
+                     <div class="flex flex-col items-center justify-center w-full py-8">
+    
+                  <div class="flex items-baseline gap-1">
+                  <span class="text-5xl font-black text-white">$29</span>
+                   <span class="text-gray-400 font-bold text-sm">/month</span>
+    </div>
+
+</div>
+
+                    <ul class="space-y-4 mb-12 text-sm text-white">
+
+                              <li style="display: flex; align-items: center; margin-bottom: 10px; font-family: sans-serif;">
+
+                   <span style="color: #22c55e; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">&#10003;</span>
+
+                   <span>Chat + Call automation together
+
+                  </span>
+
+    </li>
+
+                             <li style="display: flex; align-items: center; margin-bottom: 10px; font-family: sans-serif;">
+
+                   <span style="color: #22c55e; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">&#10003;</span>
+
+                   <span>Handles messages and phone calls
+
+                  </span>
+
+    </li>
+
+                              <li style="display: flex; align-items: center; margin-bottom: 10px; font-family: sans-serif;">
+
+                   <span style="color: #22c55e; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">&#10003;</span>
+
+                   <span>Captures leads automatically
+
+                  </span>
+
+    </li>
+
+                              <li style="display: flex; align-items: center; margin-bottom: 10px; font-family: sans-serif;">
+
+                   <span style="color: #22c55e; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">&#10003;</span>
+
+                   <span>Complete AI customer support
+                  </span>
+
+    </li>
+
+                    </ul>
+
+                    <button class="w-full py-5 rounded-2xl btn-primary font-black shadow-xl uppercase text-xs tracking-widest">Scale Fast</button>
+
+                </div>
+
+
+
+                <!-- Pro -->
+
+                <div class="glass-card p-12 rounded-[40px] border-white/5">
+
+                    <h4 class="font-bold text-indigo-400 mb-6">ENTERPRISE</h4>
+
+                    <div class="text-5xl font-black mb-10">$1,499<span class="text-lg text-gray-600 font-bold">/mo</span></div>
+
+                    <ul class="space-y-4 mb-12 text-sm text-gray-400">
+
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-indigo-500 w-4 h-4"></i> Unlimited AI Agents</li>
+
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-indigo-500 w-4 h-4"></i> 250,000 Monthly Conversations</li>
+
+                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-indigo-500 w-4 h-4"></i> Custom LLM Training</li>
+
+                    </ul>
+
+                    <button class="w-full py-4 rounded-2xl border border-white/10 font-bold hover:bg-white/5 transition uppercase text-[10px] tracking-widest">Contact Sales</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+            
+            <!-- Call To Action -->
+    <section class="py-32 px-6">
+        <div class="max-w-5xl mx-auto rounded-[50px] bg-gradient-to-r from-blue-600 to-cyan-500 p-1 md:p-1.5 shadow-2xl">
+            <div class="bg-slate-950 rounded-[48px] p-12 md:p-24 text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-blue-600/5 opacity-50"></div>
+                <h2 class="text-4xl md:text-6xl font-black font-sora mb-8 relative z-10">Start Automating Your <br/> Business with AI Today</h2>
+                <p class="text-gray-400 text-lg md:text-xl mb-12 relative z-10">Launch AI chatbots and email automation in minutes. No credit card required.</p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
+                    <button class="btn-primary px-12 py-5 rounded-2xl text-lg font-bold shadow-2xl">Get Started Free</button>
+                    <a href="oppointment.php" class="px-12 py-5 rounded-2xl text-lg font-bold glass-card border-white/10 hover:bg-white/5 transition inline-block text-center cursor-pointer">
+        Schedule Demo
+    </a>
+</div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-black font-sora text-center mb-16">Common Questions</h2>
+            <div class="space-y-4">
+                <div class="glass-card p-8 rounded-3xl cursor-pointer hover:bg-white/5">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold">How long does it take to set up?</h4>
+                        <i data-lucide="plus" class="w-5 h-5 text-gray-500"></i>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl cursor-pointer hover:bg-white/5">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold">Does it integrate with my existing CRM?</h4>
+                        <i data-lucide="plus" class="w-5 h-5 text-gray-500"></i>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl cursor-pointer hover:bg-white/5">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold">Can the AI speak multiple languages?</h4>
+                        <i data-lucide="plus" class="w-5 h-5 text-gray-500"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-24 px-6 border-t border-white/5 bg-slate-950/60">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-16 mb-20">
+            <div class="col-span-2">
+                <div class="flex items-center gap-2 mb-10">
+                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <i data-lucide="zap" class="text-white w-5 h-5 fill-current"></i>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tight">NEXGEN.</span>
+                </div>
+                <p class="text-gray-500 max-w-sm font-medium leading-loose">Pioneering the next generation of autonomous business infrastructure. Powered by neural intelligence.</p>
+            </div>
+            <div>
+                <h5 class="font-bold text-[10px] uppercase tracking-[0.3em] mb-10 text-gray-600">Infrastructure</h5>
+                <ul class="space-y-4 text-sm text-gray-500 font-semibold">
+                    <li><a href="#" class="hover:text-blue-500 transition-colors">Neural Routing</a></li>
+                    <li><a href="#" class="hover:text-blue-500 transition-colors">Vector Databases</a></li>
+                    <li><a href="#" class="hover:text-blue-500 transition-colors">Edge Nodes</a></li>
+                    <li><a href="#" class="hover:text-blue-500 transition-colors">Security Cloud</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold text-[10px] uppercase tracking-[0.3em] mb-10 text-gray-600">Ecosystem</h5>
+                <ul class="space-y-4 text-sm text-gray-500 font-semibold">
+                    <li><a href="#" class="hover:text-blue-500 transition-colors">Agent Marketplace</a></li>
+                    <li><a href="#" class="hover:text-blue-500 transition-colors">API Reference</a></li>
+                    <li><a href="#" class="hover:text-blue-500 transition-colors">Community</a></li>
+                    <li><a href="#" class="hover:text-blue-500 transition-colors">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-[10px] font-black text-gray-700 uppercase tracking-widest">
+                © 2024 NEXGEN AI LABS. ALL SYSTEMS OPERATIONAL.
+            </div>
+            <div class="flex gap-8 text-[10px] font-black text-gray-700 uppercase tracking-widest">
+                <a href="#" class="hover:text-white transition">Privacy Protocol</a>
+                <a href="#" class="hover:text-white transition">Terms of Service</a>
+                <a href="#" class="hover:text-white transition">Status</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
