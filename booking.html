@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Schedule a Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <style>
+    .input-box { transition: all 0.3s ease; background-color: #030712 !important; color: white !important; }
+    .input-box.not-empty { background-color: #3B82F6 !important; color: white !important; border-color: #3B82F6; }
+    input:-webkit-autofill { -webkit-text-fill-color: white !important; -webkit-box-shadow: 0 0 0px 1000px #3B82F6 inset !important; }
+    .btn-custom:hover { background-color: white !important; color: #2563EB !important; font-weight: bold; }
+  </style>
+</head>
+<body class="bg-[#030712] flex items-center justify-center min-h-screen text-white">
+
+  <div class="bg-[#0a111a] p-8 rounded-2xl shadow-lg w-full max-w-lg">
+    <h2 class="text-2xl font-bold text-center mb-6">Schedule a Demo</h2>
+
+    <form id="demoForm" class="space-y-4">
+      <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border border-gray-600 rounded-lg input-box" required>
+      <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border border-gray-600 rounded-lg input-box" required>
+      <input type="tel" name="phone" placeholder="Phone Number" class="w-full p-3 border border-gray-600 rounded-lg input-box">
+      <input type="text" name="date" id="date" placeholder="Select Date" class="w-full p-3 border border-gray-600 rounded-lg input-box" required>
+      <input type="text" name="time" id="time" placeholder="Select Time" class="w-full p-3 border border-gray-600 rounded-lg input-box" required>
+      <textarea name="message" placeholder="Message (optional)" rows="4" class="w-full p-3 border border-gray-600 rounded-lg input-box"></textarea>
+
+      <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg btn-custom border border-blue-600">
+        Book Demo
+      </button>
+    </form>
+
+    <p id="status" class="text-center mt-4"></p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    // Flatpickr & UI logic
+    const datePicker = flatpickr("#date", { dateFormat: "Y-m-d", minDate: "today", onChange: (selectedDates, dateStr, instance) => updateInputState(instance.input) });
+    const timePicker = flatpickr("#time", { enableTime: true, noCalendar: true, dateFormat: "H:i", time_24hr: true, onChange: (selectedDates, dateStr, instance) => updateInputState(instance.input) });
+
+    function updateInputState(element) {
+        if (element.value.trim() !== "") { element.classList.add("not-empty"); } 
+        else { element.classList.remove("not-empty"); }
+    }
+
+    document.querySelectorAll(".input-box").forEach(input => {
+        input.addEventListener("input", () => updateInputState(input));
+    });
+
+    // FORM SUBMIT VIA FETCH
+    document.getElementById("demoForm").addEventListener("submit", async function(e) {
+        e.preventDefault();
+        const statusEl = document.getElementById("status");
+        statusEl.innerText = "Processing...";
+        statusEl.className = "text-center mt-4 text-blue-400";
+
+        const formData = new FormData(this);
+        try {
+            const response = await fetch("booking.php", { method: "POST", body: formData });
+            const result = await response.text();
+            if (response.ok) {
+                statusEl.innerText = "✅ " + result;
+                statusEl.className = "text-center mt-4 text-green-400";
+                this.reset();
+                document.querySelectorAll(".input-box").forEach(input => input.classList.remove("not-empty"));
+            } else {
+                statusEl.innerText = "❌ Error: " + response.status;
+            }
+        } catch (error) {
+            statusEl.innerText = "❌ Connection Failed!";
+        }
+    });
+  </script>
+</body>
+</html>
