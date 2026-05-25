@@ -1,76 +1,197 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Schedule a Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule a Demoo</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <style>
-    .input-box { transition: all 0.3s ease; background-color: #030712 !important; color: white !important; }
-    .input-box.not-empty { background-color: #3B82F6 !important; color: white !important; border-color: #3B82F6; }
-    input:-webkit-autofill { -webkit-text-fill-color: white !important; -webkit-box-shadow: 0 0 0px 1000px #3B82F6 inset !important; }
-    .btn-custom:hover { background-color: white !important; color: #2563EB !important; font-weight: bold; }
+    /* ✅ FIX 1: html body full height aur proper scroll */
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      background-color: #030712;
+      color: white;
+    }
+
+    /* ✅ FIX 2: Page ka background pura dark ho - khaali jagah na dikhe */
+    .page-wrapper {
+      min-height: 100vh;
+      width: 100%;
+      background-color: #030712;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      box-sizing: border-box;
+    }
+
+    /* ✅ FIX 3: Form card full width mobile pe */
+    .form-card {
+      background-color: #0a111a;
+      padding: 32px 24px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      width: 100%;
+      max-width: 500px;
+      box-sizing: border-box;
+    }
+
+    .input-box {
+      transition: all 0.3s ease;
+      background-color: #030712 !important;
+      color: white !important;
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #4b5563;
+      border-radius: 10px;
+      font-size: 16px; /* ✅ FIX 4: 16px se mobile zoom nahi hoga */
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    .input-box:focus {
+      border-color: #3B82F6;
+    }
+
+    .input-box.not-empty {
+      background-color: #1e3a5f !important;
+      border-color: #3B82F6;
+    }
+
+    input:-webkit-autofill {
+      -webkit-text-fill-color: white !important;
+      -webkit-box-shadow: 0 0 0px 1000px #1e3a5f inset !important;
+    }
+
+    .input-box::placeholder {
+      color: #6b7280;
+    }
+
+    select.input-box option {
+      background-color: #0a111a;
+      color: white;
+    }
+
+    .btn-book {
+      width: 100%;
+      background-color: #2563EB;
+      color: white;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      border: 2px solid #2563EB;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-book:hover {
+      background-color: white;
+      color: #2563EB;
+    }
+
+    /* Flatpickr dark theme */
+    .flatpickr-calendar {
+      background: #0a111a !important;
+      border: 1px solid #3B82F6 !important;
+      color: white !important;
+    }
+    .flatpickr-day {
+      color: white !important;
+    }
+    .flatpickr-day.selected {
+      background: #3B82F6 !important;
+      border-color: #3B82F6 !important;
+    }
+    .flatpickr-day:hover {
+      background: #1e3a5f !important;
+    }
+    .flatpickr-months, .flatpickr-weekdays {
+      background: #0a111a !important;
+      color: white !important;
+    }
+    span.flatpickr-weekday {
+      color: #3B82F6 !important;
+    }
+    .flatpickr-current-month, .flatpickr-monthDropdown-months {
+      color: white !important;
+      background: #0a111a !important;
+    }
+    .numInputWrapper input {
+      color: white !important;
+    }
   </style>
 </head>
-<body class="bg-[#030712] flex items-center justify-center min-h-screen text-white">
-
-  <div class="bg-[#0a111a] p-8 rounded-2xl shadow-lg w-full max-w-lg">
-    <h2 class="text-2xl font-bold text-center mb-6">Schedule a Demo</h2>
-
-    <form id="demoForm" class="space-y-4">
-      <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border border-gray-600 rounded-lg input-box" required>
-      <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border border-gray-600 rounded-lg input-box" required>
-      <input type="tel" name="phone" placeholder="Phone Number" class="w-full p-3 border border-gray-600 rounded-lg input-box">
-      <input type="text" name="date" id="date" placeholder="Select Date" class="w-full p-3 border border-gray-600 rounded-lg input-box" required>
-      <input type="text" name="time" id="time" placeholder="Select Time" class="w-full p-3 border border-gray-600 rounded-lg input-box" required>
-      <textarea name="message" placeholder="Message (optional)" rows="4" class="w-full p-3 border border-gray-600 rounded-lg input-box"></textarea>
-
-      <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg btn-custom border border-blue-600">
-        Book Demo
-      </button>
-    </form>
-
-    <p id="status" class="text-center mt-4"></p>
+<body>
+  <div class="page-wrapper">
+    <div class="form-card">
+      <h2 style="font-size:26px; font-weight:800; text-align:center; margin-bottom:24px;">Schedule a Demo</h2>
+      <form id="demoForm" style="display:flex; flex-direction:column; gap:14px;">
+        <input type="text" name="name" placeholder="Your Name" class="input-box" required>
+        <input type="email" name="email" placeholder="Your Email" class="input-box" required>
+        <input type="tel" name="phone" placeholder="Phone Number" class="input-box">
+        <input type="text" name="date" id="date" placeholder="Select Date" class="input-box" required readonly>
+        <input type="text" name="time" id="time" placeholder="Select Time" class="input-box" required readonly>
+        <textarea name="message" placeholder="Message (optional)" rows="4" class="input-box" style="resize:vertical;"></textarea>
+        <button type="submit" class="btn-book">Book Demo</button>
+      </form>
+      <p id="status" style="text-align:center; margin-top:16px; font-size:15px;"></p>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script>
-    // Flatpickr & UI logic
-    const datePicker = flatpickr("#date", { dateFormat: "Y-m-d", minDate: "today", onChange: (selectedDates, dateStr, instance) => updateInputState(instance.input) });
-    const timePicker = flatpickr("#time", { enableTime: true, noCalendar: true, dateFormat: "H:i", time_24hr: true, onChange: (selectedDates, dateStr, instance) => updateInputState(instance.input) });
+    const datePicker = flatpickr("#date", {
+      dateFormat: "Y-m-d",
+      minDate: "today",
+      onChange: (selectedDates, dateStr, instance) => updateInputState(instance.input)
+    });
+
+    const timePicker = flatpickr("#time", {
+      enableTime: true,
+      noCalendar: true,
+      dateFormat: "H:i",
+      time_24hr: true,
+      onChange: (selectedDates, dateStr, instance) => updateInputState(instance.input)
+    });
 
     function updateInputState(element) {
-        if (element.value.trim() !== "") { element.classList.add("not-empty"); } 
-        else { element.classList.remove("not-empty"); }
+      if (element.value.trim() !== "") {
+        element.classList.add("not-empty");
+      } else {
+        element.classList.remove("not-empty");
+      }
     }
 
     document.querySelectorAll(".input-box").forEach(input => {
-        input.addEventListener("input", () => updateInputState(input));
+      input.addEventListener("input", () => updateInputState(input));
     });
 
-    // FORM SUBMIT VIA FETCH
     document.getElementById("demoForm").addEventListener("submit", async function(e) {
-        e.preventDefault();
-        const statusEl = document.getElementById("status");
-        statusEl.innerText = "Processing...";
-        statusEl.className = "text-center mt-4 text-blue-400";
-
-        const formData = new FormData(this);
-        try {
-            const response = await fetch("booking.php", { method: "POST", body: formData });
-            const result = await response.text();
-            if (response.ok) {
-                statusEl.innerText = "✅ " + result;
-                statusEl.className = "text-center mt-4 text-green-400";
-                this.reset();
-                document.querySelectorAll(".input-box").forEach(input => input.classList.remove("not-empty"));
-            } else {
-                statusEl.innerText = "❌ Error: " + response.status;
-            }
-        } catch (error) {
-            statusEl.innerText = "❌ Connection Failed!";
+      e.preventDefault();
+      const statusEl = document.getElementById("status");
+      statusEl.innerText = "Processing...";
+      statusEl.style.color = "#60a5fa";
+      const formData = new FormData(this);
+      try {
+        const response = await fetch("booking.php", { method: "POST", body: formData });
+        const result = await response.text();
+        if (response.ok) {
+          statusEl.innerText = "✅ " + result;
+          statusEl.style.color = "#4ade80";
+          this.reset();
+          document.querySelectorAll(".input-box").forEach(input => input.classList.remove("not-empty"));
+        } else {
+          statusEl.innerText = "❌ Error: " + response.status;
+          statusEl.style.color = "#f87171";
         }
+      } catch (error) {
+        statusEl.innerText = "❌ Connection Failed!";
+        statusEl.style.color = "#f87171";
+      }
     });
   </script>
 </body>
