@@ -101,18 +101,23 @@
     <div class="float-element w-[500px] h-[500px] bg-purple-600 bottom-0 right-[-100px]" style="animation-delay: -5s;"></div>
 
     <!-- Navigation -->
-    <nav class="flex items-center justify-between px-4 py-3 mx-auto max-w-7xl w-full">
-  <div class="flex items-center space-x-2">
-    <img src="logo.png" class="h-8 w-auto" alt="Trigda AI">
-    <span class="text-white font-bold text-lg md:text-xl">TRIGDA <span class="text-blue-500">AI</span></span>
-  </div>
-  
-  <div>
-    <button class="bg-gradient-to-r from-blue-500 to-cyan-400 text-white text-xs md:text-sm font-semibold px-4 py-2 rounded-full shadow-md">
-      Start Free
-    </button>
-  </div>
-</nav>
+  <nav class="fixed top-0 w-full z-[100] bg-slate-950/60 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+                    <i data-lucide="zap" class="text-white w-5 h-5 fill-current"></i>
+                </div>
+                <span class="text-2xl font-bold tracking-tighter">TRIGDA <span class="text-blue-500">AI</span></span>
+            </div>
+            <div class="hidden lg:flex items-center gap-10 text-sm font-semibold text-gray-400">
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#how-it-works" class="hover:text-white transition-colors">Process</a>
+                <a href="#demo" class="hover:text-white transition-colors">Demo</a>
+                <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+            </div>
+            <button class="btn-primary px-7 py-3 rounded-full text-sm font-bold shadow-xl">Start Free</button>
+        </div>
+    </nav>
 
 
 
