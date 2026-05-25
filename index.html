@@ -14,14 +14,17 @@
             --accent-cyan: #22D3EE;
         }
 
-        body{
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        body {
             background-color: var(--bg-deep);
             color: #FFFFFF;
             font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
         }
 
-        /* Floating UI Elements */
         .float-element {
             position: absolute;
             border-radius: 50%;
@@ -69,12 +72,15 @@
             transform: translateY(-2px);
         }
 
+        
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
         .animate-marquee {
-            animation: marquee 5s linear infinite;
+            animation: marquee 15s linear infinite;
+            display: flex;
+            width: max-content;
         }
 
         .step-connector {
@@ -96,18 +102,16 @@
 </head>
 <body class="antialiased">
 
-    <!-- Floating UI Background Decor -->
     <div class="float-element w-[400px] h-[400px] bg-blue-600 top-0 left-[-100px]"></div>
     <div class="float-element w-[500px] h-[500px] bg-purple-600 bottom-0 right-[-100px]" style="animation-delay: -5s;"></div>
 
-    <!-- Navigation -->
-  <nav class="fixed top-0 w-full z-[100] bg-slate-950/60 backdrop-blur-xl border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <div class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+    <nav class="fixed top-0 w-full z-[100] bg-slate-950/60 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2 flex-shrink-0">
+                <div class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20 flex-shrink-0">
                     <i data-lucide="zap" class="text-white w-5 h-5 fill-current"></i>
                 </div>
-                <span class="text-2xl font-bold tracking-tighter">TRIGDA <span class="text-blue-500">AI</span></span>
+                <span class="text-lg sm:text-2xl font-bold tracking-tighter whitespace-nowrap">TRIGDA <span class="text-blue-500">AI</span></span>
             </div>
             <div class="hidden lg:flex items-center gap-10 text-sm font-semibold text-gray-400">
                 <a href="#services" class="hover:text-white transition-colors">Services</a>
@@ -115,66 +119,51 @@
                 <a href="#demo" class="hover:text-white transition-colors">Demo</a>
                 <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
             </div>
-            <button class="btn-primary px-7 py-3 rounded-full text-sm font-bold shadow-xl">Start Free</button>
+            <button class="btn-primary px-4 sm:px-7 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold shadow-xl flex-shrink-0 whitespace-nowrap">Start Free</button>
         </div>
     </nav>
 
-
-
-
-    <!-- Hero Section -->
-    <section class="flex flex-col items-center justify-center text-center px-6 py-12 min-h-[calc(100vh-70px)]">
-  
-  <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight max-w-2xl leading-tight">
-    Your Business <br class="hidden sm:inline"> on 
-    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Autopilot.</span>
-  </h1>
-
-  <p class="mt-4 text-gray-400 text-sm sm:text-base md:text-lg max-w-md mx-auto leading-relaxed">
-    The world’s first AI workforce that doesn’t just chat—it closes deals, manages campaigns, and scales your revenue 24/7.
-  </p>
-
-  <div class="mt-8 flex flex-col sm:flex-row gap-4 w-full max-w-xs sm:max-w-none justify-center">
-    <button class="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold px-8 py-3 rounded-xl shadow-lg hover:opacity-90 transition">
-      Launch Your AI Agent
-    </button>
-    <button class="w-full sm:w-auto bg-slate-900/50 border border-slate-800 text-white font-semibold px-8 py-3 rounded-xl hover:bg-slate-800 transition">
-      Book Strategy Call
-    </button>
-  </div>
-
-</section>
-
-
-
-
-
-    <!-- Trusted By Section -->
-    <section class="py-16 border-y border-white/5 bg-slate-950/20" style="overflow:hidden; max-width:100vw;">
-    <div class="max-w-7xl mx-auto px-6 mb-10 text-center">
-        <p class="text-[10px] font-black text-gray-600 uppercase tracking-[0.5em]">Global Industry Leaders Trust Trigda</p>
-    </div>
-    <div style="overflow:hidden; width:100%;">
-    <div class="flex animate-marquee whitespace-nowrap gap-10 items-center opacity-100 grayscale">
- <div class="flex animate-marquee whitespace-nowrap gap-20 items-center opacity-40 grayscale">
-    <span class="text-3xl font-black font-sora tracking-tighter">B2B PREMIUM LEAD</span>
-    <span class="text-3xl font-black font-sora tracking-tighter mx-10">•</span>
-    <span class="text-3xl font-black font-sora tracking-tighter">STAR IMPORTS</span>
-    <span class="text-3xl font-black font-sora tracking-tighter mx-10">•</span>
-    <span class="text-3xl font-black font-sora tracking-tighter">8OZ COFFE</span>
-    <span class="text-3xl font-black font-sora tracking-tighter mx-10">•</span>
-    <span class="text-3xl font-black font-sora tracking-tighter">B2B PREMIUM LEAD</span>
-    <span class="text-3xl font-black font-sora tracking-tighter mx-10">•</span>
-    <span class="text-3xl font-black font-sora tracking-tighter">STAR IMPORTS</span>
-    <span class="text-3xl font-black font-sora tracking-tighter mx-10">•</span>
-    <span class="text-3xl font-black font-sora tracking-tighter">8OZ COFFE</span>
-    <span class="text-3xl font-black font-sora tracking-tighter mx-10">•</span>
-</div>
+    <!-- Hero Section - pt-16 add kiya taake nav ke neeche na chhuupe -->
+    <section class="flex flex-col items-center justify-center text-center px-6 py-12 pt-28 min-h-screen">
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight max-w-2xl leading-tight">
+            Your Business <br class="hidden sm:inline"> on
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Autopilot.</span>
+        </h1>
+        <p class="mt-4 text-gray-400 text-sm sm:text-base md:text-lg max-w-md mx-auto leading-relaxed">
+            The world's first AI workforce that doesn't just chat—it closes deals, manages campaigns, and scales your revenue 24/7.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 w-full max-w-xs sm:max-w-none justify-center">
+            <button class="w-full sm:w-auto bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold px-8 py-3 rounded-xl shadow-lg hover:opacity-90 transition">
+                Launch Your AI Agent
+            </button>
+            <button class="w-full sm:w-auto bg-slate-900/50 border border-slate-800 text-white font-semibold px-8 py-3 rounded-xl hover:bg-slate-800 transition">
+                Book Strategy Call
+            </button>
+        </div>
     </section>
 
-
-
-
+   
+    <section class="py-16 border-y border-white/5 bg-slate-950/20 overflow-hidden w-full">
+        <div class="max-w-7xl mx-auto px-6 mb-10 text-center">
+            <p class="text-[10px] font-black text-gray-600 uppercase tracking-[0.5em]">Global Industry Leaders Trust Trigda</p>
+        </div>
+        <div class="overflow-hidden w-full">
+            <div class="animate-marquee gap-16 items-center opacity-40 grayscale">
+                <span class="text-3xl font-black font-sora tracking-tighter px-8">B2B PREMIUM LEAD</span>
+                <span class="text-3xl font-black font-sora tracking-tighter px-8">•</span>
+                <span class="text-3xl font-black font-sora tracking-tighter px-8">STAR IMPORTS</span>
+                <span class="text-3xl font-black font-sora tracking-tighter px-8">•</span>
+                <span class="text-3xl font-black font-sora tracking-tighter px-8">8OZ COFFE</span>
+                <span class="text-3xl font-black font-sora tracking-tighter px-8">•</span>
+                <span class="text-3xl font-black font-sora tracking-tighter px-8">B2B PREMIUM LEAD</span>
+                <span class="text-3xl font-black font-sora tracking-tighter px-8">•</span>
+                <span class="text-3xl font-black font-sora tracking-tighter px-8">STAR IMPORTS</span>
+                <span class="text-3xl font-black font-sora tracking-tighter px-8">•</span>
+                <span class="text-3xl font-black font-sora tracking-tighter px-8">8OZ COFFE</span>
+                <span class="text-3xl font-black font-sora tracking-tighter px-8">•</span>
+            </div>
+        </div>
+    </section>
 
     <!-- Services Section -->
     <section id="services" class="py-32 px-6">
@@ -189,69 +178,45 @@
                     <div class="w-12 h-12 rounded-full glass-card flex items-center justify-center cursor-pointer hover:bg-white/5 transition"><i data-lucide="chevron-right"></i></div>
                 </div>
             </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-
-    <div class="glass-card w-full min-h-[380px] p-8 rounded-[40px] group flex flex-col justify-between">
-        <div>
-            <div class="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-all duration-500">
-                <i data-lucide="message-square" class="text-blue-500 w-8 h-8 group-hover:text-white"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+                <div class="glass-card w-full min-h-[380px] p-8 rounded-[40px] group flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-all duration-500">
+                            <i data-lucide="message-square" class="text-blue-500 w-8 h-8 group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Email Marketing</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Powerful email campaigns that engage your audience, nurture leads, and turn subscribers into loyal customers with proven strategies.</p>
+                    </div>
+                    <a href="#" class="text-blue-400 font-bold text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all mt-6">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                <div class="glass-card w-full min-h-[380px] p-8 rounded-[40px] group flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-all duration-500">
+                            <i data-lucide="bot" class="text-blue-500 w-8 h-8 group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">AI ChatBot</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">AI chatbots that handle your business messages, automatically book appointments, confirm orders, and respond to customers 24/7 without missing a lead.</p>
+                    </div>
+                    <a href="#" class="text-blue-400 font-bold text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all mt-6">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                <div class="glass-card w-full min-h-[380px] p-8 rounded-[40px] group flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-all duration-500">
+                            <i data-lucide="bot" class="text-blue-500 w-8 h-8 group-hover:text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">AI Automation</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">AI automation that streamlines your business processes, reduces manual work, and automatically manages tasks to save time and increase productivity.</p>
+                    </div>
+                    <a href="#" class="text-blue-400 font-bold text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all mt-6">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
             </div>
-            <h3 class="text-xl font-bold mb-4">Email Marketing</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">
-               Powerful email campaigns that engage your audience, nurture leads, and turn subscribers into loyal customers with proven
-            </p>
         </div>
-        <a href="#" class="text-blue-400 font-bold text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all mt-6">
-            Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
-    </div>
-
-    <div class="glass-card w-full min-h-[380px] p-8 rounded-[40px] group flex flex-col justify-between">
-        <div>
-            <div class="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-all duration-500">
-                <i data-lucide="bot" class="text-blue-500 w-8 h-8 group-hover:text-white"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4">AI ChatBot</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">
-               AI chatbots that handle your business messages, automatically book appointments, confirm orders, and respond to customers 24/7 without missing a lead.
-            </p>
-        </div>
-        <a href="#" class="text-blue-400 font-bold text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all mt-6">
-            Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
-    </div>
-
-    <div class="glass-card w-full min-h-[380px] p-8 rounded-[40px] group flex flex-col justify-between">
-        <div>
-            <div class="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-all duration-500">
-                <i data-lucide="bot" class="text-blue-500 w-8 h-8 group-hover:text-white"></i>
-            </div>
-            <h3 class="text-xl font-bold mb-4">AI Automation</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">
-              AI automation that streamlines your business processes, reduces manual work, and automatically manages tasks to save time and increase productivity.
-            </p>
-        </div>
-        <a href="#" class="text-blue-400 font-bold text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all mt-6">
-            Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
-    </div>
-
-</div>
-        
-
-   
-
-
-
-
-       
-
-
-    
-
-</div>
-            
     </section>
 
     <!-- How It Works Section -->
@@ -260,7 +225,6 @@
             <div class="text-center mb-24">
                 <h2 class="text-4xl md:text-6xl font-black font-sora text-gradient">The 3-Step Integration</h2>
             </div>
-            
             <div class="grid md:grid-cols-3 gap-16 relative">
                 <div class="text-center group">
                     <div class="w-24 h-24 rounded-full glass-card mx-auto flex items-center justify-center mb-8 relative z-10 group-hover:ring-4 ring-blue-500/20 transition-all">
@@ -298,11 +262,8 @@
                     <span class="hover:text-white transition cursor-pointer">Analytics Dashboard</span>
                 </div>
             </div>
-
-            <!-- Demo UI Mockup -->
             <div class="glass-card rounded-[40px] p-4 md:p-10 border-white/10 shadow-3xl">
                 <div class="grid lg:grid-cols-12 gap-10">
-                    <!-- Left: Chat UI Mockup -->
                     <div class="lg:col-span-4 space-y-4">
                         <div class="glass-card p-6 rounded-3xl bg-white/5 border-white/5">
                             <div class="flex items-center gap-3 mb-6">
@@ -323,8 +284,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Right: Dashboard Metrics -->
                     <div class="lg:col-span-8 space-y-6">
                         <div class="grid grid-cols-2 gap-6">
                             <div class="glass-card p-6 rounded-3xl">
@@ -339,19 +298,19 @@
                             </div>
                         </div>
                         <div class="glass-card p-8 rounded-3xl h-64 relative overflow-hidden">
-                             <h5 class="text-xs font-bold text-gray-400 mb-8 uppercase tracking-widest">Automation Workflow</h5>
-                             <div class="flex items-center justify-between relative px-4">
+                            <h5 class="text-xs font-bold text-gray-400 mb-8 uppercase tracking-widest">Automation Workflow</h5>
+                            <div class="flex items-center justify-between relative px-4">
                                 <div class="w-12 h-12 rounded-xl bg-blue-500 flex items-center justify-center"><i data-lucide="globe" class="w-6 h-6"></i></div>
                                 <div class="h-[2px] flex-1 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
                                 <div class="w-12 h-12 rounded-xl bg-cyan-500 flex items-center justify-center"><i data-lucide="brain" class="w-6 h-6"></i></div>
                                 <div class="h-[2px] flex-1 bg-gradient-to-r from-cyan-500 to-indigo-500"></div>
                                 <div class="w-12 h-12 rounded-xl bg-indigo-500 flex items-center justify-center"><i data-lucide="dollar-sign" class="w-6 h-6"></i></div>
-                             </div>
-                             <div class="absolute bottom-6 left-8 right-8 flex justify-between text-[10px] font-bold text-gray-600">
+                            </div>
+                            <div class="absolute bottom-6 left-8 right-8 flex justify-between text-[10px] font-bold text-gray-600">
                                 <span>VISITOR ARRIVAL</span>
                                 <span>AI QUALIFICATION</span>
                                 <span>REVENUE CAPTURE</span>
-                             </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -448,169 +407,81 @@
                 <h2 class="text-5xl md:text-7xl font-black font-sora text-gradient mb-8 leading-tight">Investment Options</h2>
                 <p class="text-gray-500 font-bold uppercase tracking-[0.4em] text-xs">Unlock Infinite Scale</p>
             </div>
-           
-           
-           
-           You said
-    <div class="grid lg:grid-cols-3 gap-8 items-center">
-
+            <!-- ✅ FIX 5: "You said" wala text hata diya jo code mein ghusa hua tha -->
+            <div class="grid lg:grid-cols-3 gap-8 items-center">
                 <!-- Starter -->
-
                 <div class="glass-card p-12 rounded-[40px] border-white/5">
-<h4 class="font-bold text-gray-500 mb-5">STARTER</h4>
-      <div class="flex flex-col items-center justify-center w-full py-8">
-    
-    <div class="flex items-baseline gap-1">
-        <span class="text-5xl font-black text-white">$29</span>
-        <span class="text-gray-400 font-bold text-sm">/month</span>
-    </div>
-
-</div>
-                    
-
+                    <h4 class="font-bold text-gray-500 mb-5">STARTER</h4>
+                    <div class="flex flex-col items-center justify-center w-full py-8">
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-5xl font-black text-white">$29</span>
+                            <span class="text-gray-400 font-bold text-sm">/month</span>
+                        </div>
+                    </div>
                     <ul class="space-y-4 mb-12 text-sm text-gray-400">
-
-                       <li style="display: flex; align-items: center; margin-bottom: 10px; font-family: sans-serif;">
-
-                    <span style="color: #22c55e; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">&#10003;</span>
-
-                  <span>24/7 automated chat support
-
-                    </span>
-
-    </li>
-
-                   <li style="display: flex; align-items: center; margin-bottom: 10px; font-family: sans-serif;">
-
-                   <span style="color: #22c55e; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">&#10003;</span>
-
-                   <span>Instantly replies to customer messages
-
-                  </span>
-
-    </li>
-
-                        <li style="display: flex; align-items: center; margin-bottom: 10px; font-family: sans-serif;">
-
-                    <span style="color: #22c55e; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">&#10003;</span>
-
-                    <span> Books appointments automatically </span>
-
-    </li>
-
+                        <li class="flex items-center gap-3">
+                            <span style="color:#22c55e; font-weight:bold; font-size:1.2rem;">&#10003;</span>
+                            <span>24/7 automated chat support</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span style="color:#22c55e; font-weight:bold; font-size:1.2rem;">&#10003;</span>
+                            <span>Instantly replies to customer messages</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span style="color:#22c55e; font-weight:bold; font-size:1.2rem;">&#10003;</span>
+                            <span>Books appointments automatically</span>
+                        </li>
                     </ul>
-
                     <button class="w-full py-4 rounded-2xl border border-white/10 font-bold hover:bg-white/5 transition uppercase text-[10px] tracking-widest">Choose Starter</button>
-
                 </div>
-
-
 
                 <!-- Growth -->
-
-                <div class="glass-card p-12 rounded-[40px] border-blue-500/50 bg-gradient-to-b from-blue-900/20 to-transparent relative scale-110 z-10 shadow-2xl">
-
-                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue-500 px-6 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em]">MOST POPULAR</div>
-
+                <div class="glass-card p-12 rounded-[40px] border-blue-500/50 bg-gradient-to-b from-blue-900/20 to-transparent relative scale-105 z-10 shadow-2xl">
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue-500 px-6 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] whitespace-nowrap">MOST POPULAR</div>
                     <h4 class="font-bold text-blue-400 mb-5">GROWTH</h4>
-
-                     <div class="flex flex-col items-center justify-center w-full py-8">
-    
-                  <div class="flex items-baseline gap-1">
-                  <span class="text-5xl font-black text-white">$29</span>
-                   <span class="text-gray-400 font-bold text-sm">/month</span>
-    </div>
-
-</div>
-
+                    <div class="flex flex-col items-center justify-center w-full py-8">
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-5xl font-black text-white">$29</span>
+                            <span class="text-gray-400 font-bold text-sm">/month</span>
+                        </div>
+                    </div>
                     <ul class="space-y-4 mb-12 text-sm text-white">
-
-                              <li style="display: flex; align-items: center; margin-bottom: 10px; font-family: sans-serif;">
-
-                   <span style="color: #22c55e; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">&#10003;</span>
-
-                   <span>Chat + Call automation together
-
-                  </span>
-
-    </li>
-
-                             <li style="display: flex; align-items: center; margin-bottom: 10px; font-family: sans-serif;">
-
-                   <span style="color: #22c55e; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">&#10003;</span>
-
-                   <span>Handles messages and phone calls
-
-                  </span>
-
-    </li>
-
-                              <li style="display: flex; align-items: center; margin-bottom: 10px; font-family: sans-serif;">
-
-                   <span style="color: #22c55e; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">&#10003;</span>
-
-                   <span>Captures leads automatically
-
-                  </span>
-
-    </li>
-
-                              <li style="display: flex; align-items: center; margin-bottom: 10px; font-family: sans-serif;">
-
-                   <span style="color: #22c55e; font-weight: bold; margin-right: 10px; font-size: 1.2rem;">&#10003;</span>
-
-                   <span>Complete AI customer support
-                  </span>
-
-    </li>
-
+                        <li class="flex items-center gap-3">
+                            <span style="color:#22c55e; font-weight:bold; font-size:1.2rem;">&#10003;</span>
+                            <span>Chat + Call automation together</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span style="color:#22c55e; font-weight:bold; font-size:1.2rem;">&#10003;</span>
+                            <span>Handles messages and phone calls</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span style="color:#22c55e; font-weight:bold; font-size:1.2rem;">&#10003;</span>
+                            <span>Captures leads automatically</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span style="color:#22c55e; font-weight:bold; font-size:1.2rem;">&#10003;</span>
+                            <span>Complete AI customer support</span>
+                        </li>
                     </ul>
-
                     <button class="w-full py-5 rounded-2xl btn-primary font-black shadow-xl uppercase text-xs tracking-widest">Scale Fast</button>
-
                 </div>
 
-
-
-                <!-- Pro -->
-
+                <!-- Enterprise -->
                 <div class="glass-card p-12 rounded-[40px] border-white/5">
-
                     <h4 class="font-bold text-indigo-400 mb-6">ENTERPRISE</h4>
-
                     <div class="text-5xl font-black mb-10">$1,499<span class="text-lg text-gray-600 font-bold">/mo</span></div>
-
                     <ul class="space-y-4 mb-12 text-sm text-gray-400">
-
                         <li class="flex items-center gap-3"><i data-lucide="check" class="text-indigo-500 w-4 h-4"></i> Unlimited AI Agents</li>
-
                         <li class="flex items-center gap-3"><i data-lucide="check" class="text-indigo-500 w-4 h-4"></i> 250,000 Monthly Conversations</li>
-
                         <li class="flex items-center gap-3"><i data-lucide="check" class="text-indigo-500 w-4 h-4"></i> Custom LLM Training</li>
-
                     </ul>
-
                     <button class="w-full py-4 rounded-2xl border border-white/10 font-bold hover:bg-white/5 transition uppercase text-[10px] tracking-widest">Contact Sales</button>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-            
-            <!-- Call To Action -->
+
+    <!-- Call To Action -->
     <section class="py-32 px-6">
         <div class="max-w-5xl mx-auto rounded-[50px] bg-gradient-to-r from-blue-600 to-cyan-500 p-1 md:p-1.5 shadow-2xl">
             <div class="bg-slate-950 rounded-[48px] p-12 md:p-24 text-center relative overflow-hidden">
@@ -619,11 +490,7 @@
                 <p class="text-gray-400 text-lg md:text-xl mb-12 relative z-10">Launch AI chatbots and email automation in minutes. No credit card required.</p>
                 <div class="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
                     <button class="btn-primary px-12 py-5 rounded-2xl text-lg font-bold shadow-2xl">Get Started Free</button>
-                    <a href="booking.html" class="px-12 py-5 rounded-2xl text-lg font-bold glass-card border-white/10 hover:bg-white/5 transition inline-block text-center cursor-pointer">
-        Schedule Demo
-    </a>
-</div>
-                    
+                    <a href="booking.html" class="px-12 py-5 rounded-2xl text-lg font-bold glass-card border-white/10 hover:bg-white/5 transition inline-block text-center cursor-pointer">Schedule Demo</a>
                 </div>
             </div>
         </div>
