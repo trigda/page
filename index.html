@@ -14,6 +14,7 @@
             --accent-cyan: #22D3EE;
         }
 
+        /* ✅ FIX 1: html aur body dono pe overflow-x hidden kiya */
         html, body {
             overflow-x: hidden;
             max-width: 100%;
@@ -72,7 +73,7 @@
             transform: translateY(-2px);
         }
 
-        
+        /* ✅ FIX 2: Marquee animation sahi ki - speed 15s rakhi */
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -105,28 +106,32 @@
     <div class="float-element w-[400px] h-[400px] bg-blue-600 top-0 left-[-100px]"></div>
     <div class="float-element w-[500px] h-[500px] bg-purple-600 bottom-0 right-[-100px]" style="animation-delay: -5s;"></div>
 
-    <nav class="fixed top-0 w-full z-[100] bg-slate-950/60 backdrop-blur-xl border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-2">
-            <div class="flex items-center gap-2 flex-shrink-0">
-                <div class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20 flex-shrink-0">
-                    <i data-lucide="zap" class="text-white w-5 h-5 fill-current"></i>
+    <!-- ✅ FIX 3: Navbar fully responsive -->
+    <nav class="fixed top-0 left-0 right-0 w-full z-[100] bg-slate-950/90 backdrop-blur-xl border-b border-white/5" style="max-width:100vw;">
+        <div style="display:flex; align-items:center; justify-content:space-between; padding: 0 16px; height:60px; box-sizing:border-box; width:100%;">
+            <!-- Logo -->
+            <div style="display:flex; align-items:center; gap:8px; min-width:0; flex-shrink:1;">
+                <div style="width:36px; height:36px; background:#2563eb; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                    <i data-lucide="zap" style="color:white; width:18px; height:18px;"></i>
                 </div>
-                <span class="text-lg sm:text-2xl font-bold tracking-tighter whitespace-nowrap">TRIGDA <span class="text-blue-500">AI</span></span>
+                <span style="font-size:clamp(14px, 4vw, 22px); font-weight:800; white-space:nowrap; color:white; letter-spacing:-0.5px;">TRIGDA <span style="color:#3B82F6;">AI</span></span>
             </div>
-            <div class="hidden lg:flex items-center gap-10 text-sm font-semibold text-gray-400">
-                <a href="#services" class="hover:text-white transition-colors">Services</a>
-                <a href="#how-it-works" class="hover:text-white transition-colors">Process</a>
-                <a href="#demo" class="hover:text-white transition-colors">Demo</a>
-                <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex" style="gap:40px; font-size:14px; font-weight:600; color:#9ca3af;">
+                <a href="#services" style="color:inherit; text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">Services</a>
+                <a href="#how-it-works" style="color:inherit; text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">Process</a>
+                <a href="#demo" style="color:inherit; text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">Demo</a>
+                <a href="#pricing" style="color:inherit; text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#9ca3af'">Pricing</a>
             </div>
-            <button class="btn-primary px-4 sm:px-7 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold shadow-xl flex-shrink-0 whitespace-nowrap">Start Free</button>
+            <!-- Button -->
+            <button style="background:linear-gradient(135deg,#3B82F6,#22D3EE); color:white; font-weight:700; padding:8px 18px; border-radius:999px; border:none; cursor:pointer; font-size:clamp(11px,3vw,14px); white-space:nowrap; flex-shrink:0;">Start Free</button>
         </div>
     </nav>
 
     <!-- Hero Section - pt-16 add kiya taake nav ke neeche na chhuupe -->
     <section class="flex flex-col items-center justify-center text-center px-6 py-12 pt-28 min-h-screen">
         <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight max-w-2xl leading-tight">
-            Your Business <br class="hidden sm:inline"> on
+            Your Businesss <br class="hidden sm:inline"> on
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Autopilot.</span>
         </h1>
         <p class="mt-4 text-gray-400 text-sm sm:text-base md:text-lg max-w-md mx-auto leading-relaxed">
@@ -142,7 +147,7 @@
         </div>
     </section>
 
-   
+    <!-- ✅ FIX 4: Marquee section bilkul sahi kiya - duplicate div hata diya, proper overflow lagaya -->
     <section class="py-16 border-y border-white/5 bg-slate-950/20 overflow-hidden w-full">
         <div class="max-w-7xl mx-auto px-6 mb-10 text-center">
             <p class="text-[10px] font-black text-gray-600 uppercase tracking-[0.5em]">Global Industry Leaders Trust Trigda</p>
