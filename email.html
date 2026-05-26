@@ -15,14 +15,17 @@
             box-sizing: border-box;
         }
         body {
+            body {
             background-color: var(--bg-deep);
             color: #FFFFFF;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
-            max-width: 100%;
         }
-        .font-sora { font-family: 'Sora', sans-serif; }
 
+        .font-sora { font-family: 'Sora', sans-serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+
+        /* Floating UI Background Decor */
         .float-element {
             position: absolute;
             border-radius: 50%;
@@ -31,37 +34,50 @@
             opacity: 0.15;
             animation: float 15s infinite alternate ease-in-out;
         }
+
         @keyframes float {
             0% { transform: translate(0, 0) scale(1); }
             100% { transform: translate(50px, 100px) scale(1.2); }
         }
+
         .text-gradient {
             background: linear-gradient(135deg, #fff 40%, rgba(255,255,255,0.4) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .accent-gradient-text {
-            background: linear-gradient(90deg, #3B82F6, #22D3EE);
+            background: linear-gradient(90deg, #3B82F6, #22D3EE, #818CF8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .glass-card {
             background: rgba(15, 23, 42, 0.4);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .glass-card:hover {
-            border-color: rgba(59, 130, 246, 0.4);
+            border-color: rgba(37, 99, 235, 0.4);
             transform: translateY(-5px);
         }
+
         .btn-primary {
             background: linear-gradient(135deg, #3B82F6 0%, #22D3EE 100%);
             transition: 0.3s ease;
+
         }
         .btn-primary:hover {
             box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
             transform: translateY(-2px);
+        }
+
+        /* NEW STYLE FROM IMAGE */
+        .skyrocket-gradient-text {
+            background: linear-gradient(90deg, #22D3EE, #2563EB); /* Tailwinds cyan-400 to Tailwinds blue-600 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         /* Mobile Responsiveness Fixes */
