@@ -9,13 +9,12 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
-            --bg-deep: #030712;
+            --bg-deep: #030712; /* Aapka specific background */
+            --accent-blue: #2563EB; /* Aapka specific blue */
+            --accent-cyan: #3B82F6;
         }
-        * {
-            box-sizing: border-box;
-        }
+
         body {
-            body {
             background-color: var(--bg-deep);
             color: #FFFFFF;
             font-family: 'Inter', sans-serif;
@@ -79,7 +78,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
         /* Mobile Responsiveness Fixes */
         @media (max-width: 768px) {
             .float-element {
